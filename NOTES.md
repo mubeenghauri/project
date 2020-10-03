@@ -1,5 +1,7 @@
 # DONE
 	- [PA part c] form now posting vals
 
-# TOOD
+# TODO
+
 	- [PA part c] php validation
+	- [PA part c] Front-End
