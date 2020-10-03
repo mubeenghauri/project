@@ -1,5 +1,5 @@
 <?php 
-print_r($_POST);
+// print_r($_POST);
 // getting all values from $_POST
 $firstname   = $_POST["firstname"];
 $secondname  = $_POST["secondname"];
@@ -12,20 +12,84 @@ $duration    = $_POST["duration"];
 $description = $_POST["desc"];
 $reffered    = isset($_POST["referred-yes"]) ? true : false;
 
+/**
+* validates Email
+* @return true if valid, false otherwise 
+*/
+function emailFieldValidator() {
+	return preg_match("/^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+$/i", $email);
+}
 
-// checking password
-if (strlen($_POST["password"]) < '6') {
-    $passwordErr = "Your Password Must Contain At Least 6 Characters!";
+/**
+* @return true if valid 
+*/
+function referrerFieldValidator() {
+	return isset($reffered) && (($reffered === true) || ($reffered === false));
 }
-elseif(!preg_match("#[0-9]+#",$password)) {
-    $passwordErr = "Your Password Must Contain At Least 1 Number!";
+
+function membershipFieldValidator() {
+	return isset($membership);
 }
-elseif(!preg_match("#[A-Z]+#",$password)) {
-    $passwordErr = "Your Password Must Contain At Least 1 Capital Letter!";
+
+function ageFieldValidator() {
+	return $age < 100 && $age > 16;
 }
-elseif(!preg_match("#[!\^\&]+#",$password)) {
-    $passwordErr = "Your Password Must Contain At Least 1 of !,^,&!";
+
+function durationFieldValidator() {
+	// echo $duration;
+	return $duration === "month1" || $duration === "month2" || $duration === "month3";
+}
+
+function passwordFieldValidator() {
+	// checking password
+	if (strlen($_POST["password"]) < '6') {
+	    $passwordErr = "Your Password Must Contain At Least 6 Characters!";
+	}
+	echo $passwordErr;
+	if(isset($passwordErr)) return false;
+	return true;
+}
+
+/**
+* validates First Name and Lastname
+* @return true is valid, false otherwise
+*/
+function nameValidator() {
+	return ctype_alpha($firstname);
+}
+
+function initValidation() {
+	if(nameValidator()){
+		$message .= "Invalid Firstname or lastname.\n";
+	}
+	if(!passwordFieldValidator()) {
+		$message .= "Invalid Password\n";
+	} 
+	if(durationFieldValidator()) {
+		$message .= "Invalid Duration\n";
+	}
+	if(ageFieldValidator()) {
+		$message .= "Invalid age\n";
+	}
+	if(membershipFieldValidator()) {
+		$message .= "Invalid membership\n";
+	}
+	if(referrerFieldValidator()) {
+		$message .= "Invalid referrer\n";
+	}
+
+	if(isset($message)) {
+		echo $message;
+		return false;
+	}
+	return true;
+}
+
+if(initValidation()) {
+	echo "WELCOME";
 } else {
-	echo "Password valid";
+	echo "Something went wrong";
 }
-echo $passwordErr;
+
+
+
