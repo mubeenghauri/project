@@ -12,15 +12,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/real_index.css">
     <style type="text/css">
+		
 		.form-box {
 			margin:100px;
 		}
-        .card {
-            width: 100%;
-            height: 15vw;
-            object-fit: cover;
-        }
 	</style>
 </head> 
 
@@ -32,13 +29,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
+            <a class="nav-link" href="services.html">Services</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">About Us</a>
+            <a class="nav-link" href="contact.html">About Us</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="register.php">Register</a>

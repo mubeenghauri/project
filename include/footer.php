@@ -1,4 +1,4 @@
-<footer class="main-footer" style="margin-top: 10%;">
+<footer class="main-footer" style="margin-top: 18%;">
             &copy 2020
 </footer>   
 </body>                     

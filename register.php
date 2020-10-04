@@ -1,6 +1,6 @@
 
 <?php
-	require_once("header.php");
+	require_once("include/header.php");
 ?>
 <body>
 	<div class="form-box">
@@ -46,6 +46,14 @@
 			<input type="age" name="age" size="5" />
 		</div>
 		<div class="form-group">
+			<label for="weight">Weight:</label>
+			<input type="weight" name="weight" size="5" />
+		</div>
+		<div class="form-group">
+			<label for="height">Height:</label>
+			<input type="height" name="height" size="5" />
+		</div>
+		<div class="form-group">
 			<label for="duration">Membership duration:</label>	
 			<select class="form-control" name="duration">
 				<option selected="" value="Default">(Please select membership duration)</option>
@@ -63,5 +71,5 @@
 		</div>
 	</form>	
 	</div>
-	<?php require_once("footer.php") ?>
+	<?php require_once("include/footer.php") ?>
 </html>

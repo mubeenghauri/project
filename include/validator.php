@@ -10,6 +10,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	$reffered    = $_POST["reffered-yes"];
 	$membership  = $_POST["membership"];
 	$age         = $_POST["age"];
+	$height      = $_POST["height"];
+	$weight      = $_POST["weight"];
 	$duration    = $_POST["duration"];
 	$description = $_POST["desc"];
 	$reffered    = isset($_POST["referred-yes"]) ? true : false;
@@ -37,8 +39,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	}
 
 	function ageFieldValidator() {
-		global $age;
-		return $age < 100 && $age > 16;
+		global $age, $weight;
+		return ($age < 100 && $age > 16) && ($weight < 150 && $weight > 40) ;
 	}
 
 	function durationFieldValidator() {
@@ -104,6 +106,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		global $firstname, $secondname, $email, $password,
 				$reffered, $membership, $age, $duration,
 				$description;
+
 		$data	 = array(
 			"firstname" => $firstname,
 			"secondname" => $secondname,
@@ -112,6 +115,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			"reffered" => $reffered ? "yes" : "no",
 			"membership" => $membership,
 			"age" => $age,
+			"weight" => $weight,
+			"height" => $height,
 			"duration" => $duration,
 			"description" => $description 
 		);
@@ -123,9 +128,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		// array_push($tempArray, $data);
 		$tempArray[] = $data;
 		$jsonData = json_encode($tempArray);
-		print_r($jsonData);
+		// print_r($jsonData);
 		file_put_contents('data/user.json', $jsonData);
-		echo "Pushed";
+		// echo "Pushed";
 	}
 
 	if(initValidation()) {
