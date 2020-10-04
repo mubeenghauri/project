@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/real_index.css">
+    <script src="assets/js/jquery.js"></script>
     <style type="text/css">
 		
 		.form-box {
@@ -42,8 +43,17 @@
         </li>
         </ul>
     </div>
-    <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <div class="navbar-collapse">
+         <ul class="navbar-nav">
+            <li class="nav-item">
+
+                <?php 
+                    $xml = file_get_contents("http://api.weatherapi.com/v1/current.json?key=340cd7d2dde147dfbf9171425200410&q=Melbourne");
+                    $xml = json_decode($xml);                                                                                                                                                                                                                                                                                                                                                                      
+                ?>
+                <a class="nav-link" href="index.php">Weather : <?php echo $xml->current->condition->text;?></a>
+            </li>
+            </li>
+        </ul>
+    </div>
 </nav>
