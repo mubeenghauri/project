@@ -6,6 +6,14 @@
     require_once("include/exerciseUpdater.php");
 ?>
     <div class="container">
+        <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item" aria-current="page">Home</li>
+            <li class="breadcrumb-item active" aria-current="page">My Fitness</li>
+        </ol>
+        </nav>
+    </div>
+    <div class="container">
         <h1 style="margin:20px;"> Welcome , <?php echo $_SESSION['user']?></h1>
         <div class="container" style="margin:20px;">
             <div class="row">

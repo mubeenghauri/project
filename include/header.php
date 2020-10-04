@@ -46,7 +46,6 @@
     <div class="navbar-collapse">
          <ul class="navbar-nav">
             <li class="nav-item">
-
                 <?php 
                     $xml = file_get_contents("http://api.weatherapi.com/v1/current.json?key=340cd7d2dde147dfbf9171425200410&q=Melbourne");
                     $xml = json_decode($xml);                                                                                                                                                                                                                                                                                                                                                                      
@@ -54,6 +53,10 @@
                 <a class="nav-link" href="index.php">Weather : <?php echo $xml->current->condition->text;?></a>
             </li>
             </li>
+            <form action="?logout=1" method="POST" class="form-inline" style="margin-left:100px;">
+                <input type="submit" class="btn btn-primary" value="Logout">
+            </form>
         </ul>
     </div>
 </nav>
+<?php require_once("include/logout.php")?>
