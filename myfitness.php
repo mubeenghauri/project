@@ -1,15 +1,25 @@
 <?php
     require_once("include/header.php");
     if(!isset($_SESSION['user'])) {
-        header("Location:logIn.html");
+        header("Location:logIn.php");
     }
     require_once("include/exerciseUpdater.php");
 ?>
-    
     <div class="container">
-        <h1> Welcome , <?php echo $_SESSION['user']?></h1>
-
-        <div class="row">
+        <h1 style="margin:20px;"> Welcome , <?php echo $_SESSION['user']?></h1>
+        <div class="container" style="margin:20px;">
+            <div class="row">
+            <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <form class="form-inline">
+                        <input id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+                    </form>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+        <div id="main-box" class="row">
             <div class="col-md-4">
                 <div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="assets/images/running.jpg" alt="Card image cap" style="height:180px;">
@@ -44,14 +54,20 @@
         <h1>User Details</h1>
         <?php require_once("include/check_stats.php");?>
         <div class="container">
-            <form action="">
+            <form action="?update-weekly-goal=1" method="POST">
                 <div class="form-group">
                     <label for="">Weekly Goal</label>
-                    <input type="text">
+                    <input type="text" name="goal">
                     <input type="submit" class="btn btn-primary" value="Update">
                 </div>
             </form>
         </div>
+        <?php require_once("include/goal.php");?>
+    </div>
+
+    <div class="container">
+        <h1> Recommended For You !</h1>
+        <?php require_once("include/recomended.php")?>
     </div>
 
     <div class="container">
@@ -63,16 +79,18 @@
         <h1>Weekly Goal</h1>
         <div class="row">
             <div class="col-md-8">
-                <?php $average = ($user["running"] + $user["gardening"] + $user["cycleing"]) / 30;?>
+                <?php $average = (($user["running"] + $user["gardening"] + $user["cycleing"]));?>
                 <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: <?php echo $average?>%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar" role="progressbar" style="width: <?php echo ($average/$user['goal'])*100?>%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>  
             </div>
             <div class="col-md-4">
                 <h5>GOAL!</h5>
             </div>
         </div>
-        
+        <div class="row text-center center">
+            <?php echo $average?> / <?php echo isset($user["goal"]) ? $user["goal"] : 100; ?>   
+        </div>
     </div>
 
     <!-- Modal -->

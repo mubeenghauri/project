@@ -1,6 +1,4 @@
 <?php 
-
-
 function updateGardening($val) {
     $inp = file_get_contents('data/user_stats.json');
     $user = json_decode($inp, true);    
