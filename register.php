@@ -5,7 +5,7 @@
 <body>
 	<div class="form-box">
 		<h1>Become Fitness and Training member</h1>	
-	<form name='registration' method="POST" action="validator.php">
+	<form name='registration' method="POST" action="include/validator.php">
 		<div class="form-group">
 			<label for="firstname">First name:</label>
 			<input class="form-control" type="text" name="firstname" size="50" />	

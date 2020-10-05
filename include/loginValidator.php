@@ -14,10 +14,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         // print_r($user);
         // echo $user->firstname;
         if($user->email == $username) {
-            echo "hey";
-            echo $user->email." - ".$user->password." - ".$password;
+ //           echo "hey";
+ //           echo $user->email." - ".$user->password." - ".$password;
             if($user->password == $password) {
-                echo "Logged In";
+ //               echo "Logged In";
                 $_SESSION['user'] = $user->firstname;
                 header("Location:/myfitness.php");
             }

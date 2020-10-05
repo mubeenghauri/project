@@ -1,7 +1,7 @@
 <?php 
 	
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-	print_r($_POST);
+//	print_r($_POST);
 	// getting all values from $_POST
 	$firstname   = $_POST["firstname"];
 	$secondname  = $_POST["secondname"];
@@ -135,8 +135,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 	if(initValidation()) {
 		createUser();
-		echo "WELCOME";
-		header("Location:/logIn.html");
+		//aecho "WELCOME";
+		header("Location:logIn.php");
 	} else {
 		echo "Something went wrong";
 	}
