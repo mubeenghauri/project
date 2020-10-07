@@ -2,26 +2,51 @@
 <?php
 	require_once("include/header.php");
 ?>
+<div class="container">
+        <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">Home / Register</li>
+        </ol>
+        </nav>
+    </div>
+
 <body>
+
+	<div class="main-wrapper">
 	<div class="form-box">
 		<h1>Become Fitness and Training member</h1>	
 	<form name='registration' method="POST" action="include/validator.php">
+
+	<div class="reg_div">
 		<div class="form-group">
-			<label for="firstname">First name:</label>
+			<label for="firstname">First name: </label>
 			<input class="form-control" type="text" name="firstname" size="50" />	
 		</div>
+		</div>
+
+		<div class="reg_div">
 		<div class="form-group">
-			<label for="secondname">Second name:</label>
+			<label for="secondname"> Second name: </label>
 			<input class="form-control" type="text" name="secondname" size="50" />	
+			</div>
 		</div>
-		<div class="form-group">
-			<label for="email">Email:</label>
-			<input class="form-control" type="text" name="email" size="50" />	
+	
+
+		<div class="reg_div">
+			<div class="form-group">
+				<label for="email" > Email:</label>
+				<input class="form-control" type="text" name="email" size="50" />	
 		</div>
-		<div class="form-group">
-			<label for="email">Password:</label>
-			<input class="form-control" type="password" name="password"	/>	
+	</div>
+
+		<div class="reg_div">
+			<div class="form-group">
+				<label for="password">Password:</label>
+				<input class="form-control" type="password" name="password"	/>	
+			</div>
 		</div>
+
+		
 		<div class="form-group">
 			<label id="reffer">Reffered by a gym member:</label>
 			<div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -70,6 +95,7 @@
 			<input class="btn btn-primary" type="submit" name="submit" value="Submit" />				
 		</div>
 	</form>	
+	</div>
 	</div>
 	<?php require_once("include/footer.php") ?>
 </html>
