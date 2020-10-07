@@ -33,10 +33,10 @@
             <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="services.html">Services</a>
+            <a class="nav-link" href="services.php">Services</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="contact.html">About Us</a>
+            <a class="nav-link" href="contact.php">Contact Us</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="register.php">Register</a>

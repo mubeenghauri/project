@@ -3,11 +3,13 @@
 <div class="container">
 	<nav aria-label="breadcrumb">
 	<ol class="breadcrumb">
-		<li class="breadcrumb-item active" aria-current="page">Home</li>
+		<li class="breadcrumb-item active" aria-current="page">Home / About us</li>
 	</ol>
 	</nav>
 </div>
 
+<div class="main-wrapper">
+    
         <section class="grid-block blockC" >
 				<div class="inner">							
 					<div class="content">
@@ -27,30 +29,11 @@
 					</div>
 				</div>		
 		</section>
-        <footer class="grid-block blockD">
-				<section id="footer">
-					<div class="inner" style="text-align:Left;">
-						<h2 class="major">Get in touch</h2>
-						<h3 class="icon solid fa-home">
-							Fitness and Training &bull; Web programming &bull; RMIT
-						</h3>
-						<ul class="contact">
-		
-							<li class="icon solid fa-phone">0433971705</li>
-							<li class="icon solid fa-envelope"><a href="#">s3748335@student.rmit.edu.au</a></li>
-							<li class="icon brands fa-facebook-f"><a href="https://www.facebook.com/Abradacabraa" target="_blank">Facebook</a></li>
-							<li class="icon brands fa-instagram"><a href="https://www.instagram.com/hung.lee_/" target="_blank">Instagram</a></li>
-						</ul>
-					</div>
-					<div>
-						<h4 class="copyright" style="text-align:Right;">
-							&copy; Fitness and Training
-						</h4>
-					</div>
-				</section>
-		</footer>
-		</div>
+        
+        </div>
+</div>
 	</body>
 
 </html>
 
+<?php require_once("include/footer.php")?>

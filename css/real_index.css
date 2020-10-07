@@ -74,3 +74,10 @@ body
     font-family: 'Merriweather', serif; 
   }
 
+  .reg_div {
+    text-align: left;
+  }
+
+  .gap{
+    padding-top: 1.9%;
+  }

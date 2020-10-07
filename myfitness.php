@@ -13,76 +13,91 @@
         </ol>
         </nav>
     </div>
-    <div class="container">
-        <h1 style="margin:20px;"> Welcome , <?php echo $_SESSION['user']?></h1>
-        <div class="container" style="margin:20px;">
-            <div class="row">
-            <div class="col-md-4"></div>
+
+    <div class = "main-wrapper">
+        <div class="container">
+            <h1 style="margin:20px;"> Welcome , <?php echo $_SESSION['user']?></h1>
+            
+            <div class="container" style="margin:20px;">
+                <div class="row">
+                    <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <form class="form-inline">
+                            <input id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+                            </form>
+                        </div>
+                
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+
+            <div id="main-box" class="row">
                 <div class="col-md-4">
-                    <form class="form-inline">
-                        <input id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
-                    </form>
+                    <div class="card" style="width: 8rem;">
+                        <img class="card-img-top" src="assets/images/running.jpg" alt="Card image cap" style="height:180px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Running</h5>
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#runningModal">Update</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4"></div>
-            </div>
-        </div>
-        <div id="main-box" class="row">
+            
             <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="assets/images/running.jpg" alt="Card image cap" style="height:180px;">
-                <div class="card-body">
-                    <h5 class="card-title">Running</h5>
-                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#runningModal">Update</a>
-                </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="assets/images/cycleing.jpeg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Cycleing</h5>
-                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#cycleingModal">Update</a>
-                </div>
+                <div class="card" style="width: 8rem;">
+                    <img class="card-img-top" src="assets/images/cycleing.jpeg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Cycling</h5>
+                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#cycleingModal">Update</a>
+                    </div>
                 </div>
             </div>
+
             <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="assets/images/gardening.jpeg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Gardening</h5>
-                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#gardeningModal">Update</a>
-                </div>
+                <div class="card" style="width: 8rem;">
+                    <img class="card-img-top" src="assets/images/gardening.jpeg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Gardening</h5>
+                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#gardeningModal">Update</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
+<div class = "main-wrapper">
     <div class="container">
         <h1>User Details</h1>
         <?php require_once("include/check_stats.php");?>
         <div class="container">
             <form action="?update-weekly-goal=1" method="POST">
-                <div class="form-group">
-                    <label for="">Weekly Goal</label>
-                    <input type="text" name="goal">
-                    <input type="submit" class="btn btn-primary" value="Update">
+            <div class="form-group">
+                <label for="">Weekly Goal</label>
+                <input type="text" name="goal">
+                <input type="submit" class="btn btn-primary" value="Update">
                 </div>
             </form>
         </div>
         <?php require_once("include/goal.php");?>
     </div>
+    </div>
 
+    <div class = "main-wrapper">
     <div class="container">
         <h1> Recommended For You !</h1>
         <?php require_once("include/recomended.php")?>
     </div>
+    </div>
 
+    <div class = "main-wrapper">
     <div class="container">
         <h1>Log Book</h1>
         <?php require_once("include/log.php");?>
     </div>
+    </div>
 
+    <div class = "main-wrapper">
     <div class="container">
         <h1>Weekly Goal</h1>
         <div class="row">
@@ -99,6 +114,7 @@
         <div class="row text-center center">
             <?php echo $average?> / <?php echo isset($user["goal"]) ? $user["goal"] : 100; ?>   
         </div>
+    </div>
     </div>
 
     <!-- Modal -->
